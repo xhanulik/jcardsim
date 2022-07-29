@@ -180,6 +180,8 @@ public class AsymmetricSignatureImpl extends Signature implements SignatureMessa
             default:
                 CryptoException.throwIt(CryptoException.NO_SUCH_ALGORITHM);
                 break;
+            default:
+                CryptoException.throwIt(CryptoException.NO_SUCH_ALGORITHM);
         }
     }
 
@@ -255,7 +257,7 @@ public class AsymmetricSignatureImpl extends Signature implements SignatureMessa
         }
         return 0;
     }
-
+    
     private short getECDSASignatureLength() {
         int keySizeInByte =key.getSize() / 8;
         int signatureSize = keySizeInByte * 2; // r, s
